@@ -11,7 +11,8 @@ def fib(n):
 		b = c
 		c = a+b
 	return c
-	
+
+# some reasoning	
 # all even-valued will have index 3*k + 2, for example, 2, 8, 34, ...
 
 result = 2
