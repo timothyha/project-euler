@@ -11,8 +11,6 @@ for a in range(1,333):
     for b in range(a+1,500):
         bb = b*b
         c = 1000-a-b
-        if c<=b: 
-            continue
-        else:
+        if c>b: 
             if c*c == aa+bb:
                 print a*b*c, a, b, c # 31875000 200 375 425
