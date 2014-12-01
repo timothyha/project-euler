@@ -1,6 +1,8 @@
 # https://projecteuler.net/problem=7
 # By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.  What is the 10001st prime number?
 
+# some mathematical reasoning: each next prime number P is the first number which cannot be divided by any of the previously calculated prime numbers which are >=2 and <=square root of P
+
 primes = list([2,3,5,7,11,13])
 
 def next_prime(plist):
