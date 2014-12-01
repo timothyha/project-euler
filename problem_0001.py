@@ -1,7 +1,7 @@
 # https://projecteuler.net/problem=1
 # If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
 
-# learned something about Python sets
+# Python sets were very convenient here to prevent from duplicates
 # we didn't use the fact that 3 and 5 have no common divisor and are prime numbers
 
 def multiples_sum(limit, a, b):
