@@ -13,8 +13,8 @@ maxnum = 2000000
 
 # checking by n = n+2 is really slow, but there are many pairs of prime numbers in form of (n, n+2)
 # could it be faster if I populate a bitmap of non-prime numbers?
-
 # current solution is too slow, about 10 minutes of runtime
+# look at the other script "problem_0010_sieve.py"
 
 while n < maxnum:         
     n = primes[length-1] + 2;
