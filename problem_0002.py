@@ -17,7 +17,12 @@ def fib(n):
 result = 2
 
 for n in range(1,1000000):
+
 	fibo = fib(3*n+2)
+
+# we could also put the whole loop here and NOT call fib(n)
+# but fib(n) implementation is good enough to be saved in this code
+
 	if fibo < 4000000:
 		result = result + fibo
 	else:
