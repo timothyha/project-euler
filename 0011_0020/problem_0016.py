@@ -4,33 +4,28 @@
 
 # Check also http://en.wikipedia.org/wiki/Digit_sum for mathematical formula
 
-# Here we calculate ALL digits using map and reduce stuff
+# Here we calculate ALL digits
 
 digits = [1]
-
-def add(x,y): return x+y
 
 for n in range(1,1001):
     # multiple by 2
     length = len(digits)
-    doubles = [ digits[i]+digits[i] for i in range(0, length) ]
-    #print doubles
+    
+    for i in range(0,length): digits[i] = digits[i] + digits[i]
+    
     k = 0
     while k < length-1:
-        if doubles[k] >= 10:
-            digits[k] = doubles[k] % 10
-            doubles[k+1] = doubles[k+1]+1
-        else:
-            digits[k] = doubles[k]
+        if digits[k] >= 10:
+            digits[k] = digits[k] % 10
+            digits[k+1] = digits[k+1]+1
         k = k+1
             
-    if doubles[length-1] >= 10:
-        digits[length-1] = doubles[length-1]%10
-        digits.append(doubles[length-1]/10)
-    else:
-        digits[length-1] = doubles[length-1]
+    if digits[length-1] >= 10:
+        digits.append(digits[length-1]/10)
+        digits[length-1] = digits[length-1]%10
 
-    print "2 pow", n, "sum of digits", reduce(add, digits), digits[length-1]
+    print "2 pow", n, "sum of digits", sum(n for n in digits) #, digits[len(digits)-1]
     
-#2 pow 999 sum of digits 1367 5
-#2 pow 1000 sum of digits 1366 0
+#2 pow 999 sum of digits 1367
+#2 pow 1000 sum of digits 1366
