@@ -24,4 +24,4 @@ for n in range(2,101):
         digits[length-1] = digits[length-1]%10
         length = length + 1
 
-    print "Factorial", n, "sum of digits", sum(a for a in digits)
+    print "Factorial of:", n, "sum of digits:", sum(a for a in digits),"number of digits:",len(digits)
