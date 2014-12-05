@@ -4,14 +4,14 @@
 
 # We can grow trees from first node, adding neighbours on each step (water flowing down...) The numbers of ending nodes with coordinate of lower right corner will be the answer.
 
-# first approach with storing of full routes cost much memory - see problem_0015_fullroutes.py
-# better solution is to store only the end nodes, which are not [N,N] yet
+# first approach is to go from 1x1 to nxn, costly in memory - see 15_memory_problematic.py
+# better solution is go backwards
 
-# lists of (m,n) coordinates, which indicate some unfinished route, we start with 1,1
-# coord = 100 x m + n to save memory
+# dynamic programming, functional style with memoization
 
 maxnum = 21 # square 20x20 has 21 nodes on each side
 
+# coord = 100 x m + n to save memory
 cached = [maxnum * 100 + maxnum, maxnum * 100 + maxnum-1, maxnum * 100 + maxnum-100]
 values = [0, 1, 1]
 
