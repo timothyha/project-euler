@@ -12,15 +12,18 @@ for n in range(1,1001):
     # multiple by 2
     length = len(digits)
     
-    for i in range(0,length): digits[i] = digits[i] + digits[i]
-    
     k = 0
+    carry = 0
     while k < length-1:
+        digits[k] = digits[k] + digits[k] + carry
         if digits[k] >= 10:
             digits[k] = digits[k] % 10
-            digits[k+1] = digits[k+1]+1
+            carry = 1
+        else:
+            carry = 0
         k = k+1
             
+    digits[length-1] = digits[length-1] + digits[length-1] + carry
     if digits[length-1] >= 10:
         digits.append(digits[length-1]/10)
         digits[length-1] = digits[length-1]%10
