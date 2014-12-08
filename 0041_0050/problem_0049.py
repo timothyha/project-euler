@@ -1,10 +1,7 @@
 # https://projecteuler.net/problem=49
-# The prime 41, can be written as the sum of six consecutive primes: 41 = 2 + 3 + 5 + 7 + 11 + 13
-# This is the longest sum of consecutive primes that adds to a prime below one-hundred.
-# The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
-# Which prime, below one-million, can be written as the sum of the most consecutive primes?
-
-# p1....pn - to check if pn lends new sum (in primes, < maxnum), we can go backwards from n to n-1 and get previous results
+# The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways: (i) each of the three terms are prime, and, (ii) each of the 4-digit numbers are permutations of one another.
+# There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, exhibiting this property, but there is one other 4-digit increasing sequence.
+# What 12-digit number do you form by concatenating the three terms in this sequence?
 
 def stamp(n):
     s = sorted([n%10, ((n-n%10)%100)/10, ((n-n%100)%1000)/100, ((n-n%1000)%10000)/1000])
@@ -42,7 +39,7 @@ for n in range(first,length):
     stamp_n = stamp(n)
     for k in range(length-1,n,-1):
         if stamps[k] != stamps[n]: continue
-        mid = (primes[k]+primes[n])/2
+        mid = (primes[k]+primes[n])/2 # arithmetic sequence!
         if mid in primes:
             if stamps[primes.index(mid)] == stamps[k]:
                 print "Found", primes[n], primes[primes.index(mid)], primes[k]
