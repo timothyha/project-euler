@@ -40,12 +40,24 @@ while len(queue) > 0:
         
         prevlength = length
         length = length + len(digits)
-        print digits, length, queue[0]
+        # print digits, length, queue[0]
         
     i = queue[0]-prevlength
     d.append(digits[len(digits)-i]) # digits are stored in reversed order
     queue.pop(0)
+    print d, queue
     
-print d
+prod = 1
+for i in range(0,len(d)): prod = prod * d[i]
+print "Result", prod
     
-    
+# product of all digits is 210
+"""
+[1, 1] [100, 1000, 10000, 100000, 1000000]
+[1, 1, 5] [1000, 10000, 100000, 1000000]
+[1, 1, 5, 3] [10000, 100000, 1000000]
+[1, 1, 5, 3, 7] [100000, 1000000]
+[1, 1, 5, 3, 7, 2] [1000000]
+[1, 1, 5, 3, 7, 2, 1] []
+Result 210
+"""    
