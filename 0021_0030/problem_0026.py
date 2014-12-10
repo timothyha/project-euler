@@ -7,10 +7,8 @@
 
 def ratio(k,n):
     digits = [k/n]
-    #print digits
     moduli = []
     mod = 1
-    loop = 0
     while mod != 0:
         mod = (10*k) % n
         if mod in moduli: 
@@ -25,11 +23,12 @@ def ratio(k,n):
 #print ratio(1,10)
 #print ratio(1,11)
 
-maxlen = 0
-maxnum = 0
-for i in range(1,1000):
-    lst = ratio(1,i)
-    if lst[1] > maxlen:
-        maxlen = lst[1]
-        maxnum = i
-print maxlen, maxnum
+if __name__ == '__main__':
+    maxlen = 0
+    maxnum = 0
+    for i in range(1,1000):
+        lst = ratio(1,i)
+        if lst[1] > maxlen:
+            maxlen = lst[1]
+            maxnum = i
+    print maxlen, maxnum
