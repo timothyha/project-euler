@@ -44,4 +44,11 @@ for n in range(1,maxnum+1):
         result = result + n
         print n
 
-print "Result", result
+print "Result", result 
+"""
+...
+18437
+19067
+20161
+Result 4179871
+"""
